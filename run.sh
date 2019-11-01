@@ -10,7 +10,7 @@ fi
 set -ue
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-export ATC_URL=${ATC_URL:-"http://192.168.99.100:8080"}
+export ATC_URL=${ATC_URL:-"http://192.168.0.102:8080"}
 export fly_target=${fly_target:-main}
 echo "Concourse API target ${fly_target}"
 echo "Concourse API $ATC_URL"
@@ -34,5 +34,5 @@ pushd $DIR
   fly sp -t ${fly_target} configure -c pipeline.yml -p main --load-vars-from ${stub} -n
   fly -t ${fly_target} unpause-pipeline --pipeline main
   fly -t ${fly_target} trigger-job -j main/job-build-and-verify
-  fly -t ${fly_target} watch -j main/job-build-and-verify
+#  fly -t ${fly_target} watch -j main/job-build-and-verify
 popd

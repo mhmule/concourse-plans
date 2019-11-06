@@ -22,4 +22,4 @@ jobs:
   - get: pipeline-resource
   - task: build-and-verify
     file: pipeline-resource/tasks/maven-build.yml
-    input_mapping: {source-code: source-code-resource, pipeline: pipeline-resource}
+    input_mapping: {source-code: source-code-resource, pipeline: pipeline-resource, private_key1: demotestmule1-deploy-key, private_key2: pipeline-deploy-key }

@@ -5,12 +5,14 @@ resources:
   source:
     uri: {{source-code-resource-uri}}
     branch: {{source-code-resource-branch}}
+    private_key: {{demotestmule1-deploy-key}}
 
 - name: pipeline-resource
   type: git
   source:
     uri: {{pipeline-resource-uri}}
     branch: {{pipeline-resource-branch}}
+    private_key: {{pipeline-deploy-key}}
 
 jobs:
 - name: job-build-and-verify

@@ -10,7 +10,7 @@ fi
 set -ue
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-export ATC_URL=${ATC_URL:-"http://192.168.0.102:8080"}
+export ATC_URL=${ATC_URL:-"http://192.168.99.100:8080"}
 export fly_target=${fly_target:-concourse-plans}
 echo "Concourse API target ${fly_target}"
 echo "Concourse API $ATC_URL"
